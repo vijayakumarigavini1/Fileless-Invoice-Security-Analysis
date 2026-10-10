@@ -1,76 +1,74 @@
 # Fileless Invoice — Security Event Analysis and Attack Detection
 
-## Project Overview
+## 📌 Project Overview
 
-**Fileless Invoice** is a cybersecurity project designed to analyze security events, identify suspicious activity, and estimate the probability of potential attacks.
+Fileless Invoice is a cybersecurity project developed to analyze security events, identify suspicious activity, and estimate potential attack probabilities.
 
-The project uses Python-based event generation, event degradation, baseline analysis, behavioral attribution, and attack detection techniques to study security event patterns through a web-based dashboard.
+The project uses Python-based event generation, behavioral analysis, baseline comparison, and detection evaluation. A Flask web dashboard provides access to the available analysis modules.
 
-The dashboard provides access to different analysis modules and displays evaluation results to help users understand how suspicious events can be identified.
-
-## Objectives
+## 🎯 Objectives
 
 * Analyze security events and suspicious activity.
-* Identify potential attack patterns from event sequences.
+* Identify potential attack patterns.
 * Estimate attack probabilities using behavioral analysis.
-* Evaluate detection performance across different scenarios.
-* Examine the effects of missing or degraded security events.
-* Store analysis results in an SQLite database.
-* Provide a web interface for running analysis modules.
+* Evaluate detection performance across multiple scenarios.
+* Study the effects of missing or degraded security events.
+* Store analysis results using SQLite.
+* Provide a web-based interface for security analysis.
 
-## Key Features
+## ✨ Features
 
 ### 1. Security Event Analysis
 
-Processes generated security events and analyzes activity patterns to identify potentially suspicious behavior.
+Analyzes generated security events to identify potentially suspicious activity.
 
 ### 2. Attack Detection
 
-Uses event characteristics and behavioral attribution to estimate whether observed activity may be associated with an attack.
+Uses event characteristics and behavioral attribution to estimate potential attack activity.
 
 ### 3. Baseline Analysis
 
-Builds a baseline of routine activity to help distinguish normal behavior from potentially suspicious events.
+Builds a baseline of routine activity to help distinguish normal behavior from suspicious patterns.
 
 ### 4. Event Generation and Degradation
 
-Generates security event scenarios and simulates the loss or degradation of events to study the impact on detection.
+Generates security event scenarios and simulates event loss or degradation.
 
 ### 5. Evaluation Module
 
-Evaluates detection performance across multiple scenarios and reports metrics such as accuracy and Brier score.
+Evaluates detection performance across different scenarios using accuracy and Brier score.
 
 ### 6. Calibration Module
 
-Examines probability calibration to assess how closely predicted attack probabilities correspond to observed outcomes.
+Evaluates the reliability of predicted attack probabilities.
 
-### 7. Diagnostic Analysis
+### 7. Diagnostic Module
 
-Studies event visibility and missing-event patterns to understand how incomplete telemetry affects security analysis.
+Examines event visibility and missing-event patterns.
 
 ### 8. Case Inspection
 
-Provides functionality for inspecting selected security analysis cases.
+Supports inspection of selected security analysis cases.
 
 ### 9. Web Dashboard
 
-Uses Flask to provide a browser-based interface for running the project modules.
+Provides a browser-based interface using Flask, HTML, and CSS.
 
 ### 10. Analysis History
 
-Uses SQLite to store analysis results for later reference.
+Stores analysis results in an SQLite database.
 
-## Technologies Used
+## 🛠️ Technologies Used
 
-* **Programming Language:** Python
-* **Web Framework:** Flask
-* **Configuration:** YAML
-* **Database:** SQLite
-* **Version Control:** Git
-* **Repository Hosting:** GitHub
-* **Interface:** HTML and CSS
+* Python
+* Flask
+* PyYAML
+* SQLite
+* HTML and CSS
+* Git
+* GitHub
 
-## Project Structure
+## 📂 Project Structure
 
 ```text
 fileless_invoice/
@@ -84,27 +82,18 @@ fileless_invoice/
 ├── configs/
 │   └── scenario.yaml
 ├── engine/
-│   ├── attribution.py
-│   ├── baseline.py
-│   ├── capability.py
-│   ├── chain.py
-│   ├── labeller.py
-│   └── regulatory.py
 ├── generator/
-│   └── generate.py
 ├── degrader/
-│   └── degrade.py
-├── .gitignore
 └── README.md
 ```
 
-## Installation
+## ⚙️ Installation
 
 ### Prerequisites
 
 * Python 3.10 or later
 * Git
-* A web browser
+* A modern web browser
 
 ### Step 1: Clone the Repository
 
@@ -112,7 +101,7 @@ fileless_invoice/
 git clone https://github.com/vijayakumarigavini1/Fileless-Invoice-Security-Analysis.git
 ```
 
-### Step 2: Navigate to the Project Folder
+### Step 2: Open the Project Folder
 
 ```bash
 cd Fileless-Invoice-Security-Analysis
@@ -124,9 +113,7 @@ cd Fileless-Invoice-Security-Analysis
 python -m pip install Flask PyYAML
 ```
 
-Install any additional dependencies required by the project if prompted.
-
-## Running the Project
+## ▶️ Run the Project
 
 Start the Flask application:
 
@@ -134,30 +121,28 @@ Start the Flask application:
 python app.py
 ```
 
-Open the following address in your browser:
+Open your browser and visit:
 
 ```text
 http://127.0.0.1:5000
 ```
 
-The dashboard provides access to the available project modules.
+## 🧪 Available Modules
 
-## Available Modules
+| Module           | Description                                  |
+| ---------------- | -------------------------------------------- |
+| Main Analysis    | Generates and analyzes security events       |
+| Diagnose         | Examines event visibility and missing events |
+| Evaluate         | Measures detection performance               |
+| Calibrate        | Evaluates probability calibration            |
+| Inspect Cases    | Examines selected analysis cases             |
+| Analysis History | Stores and retrieves analysis results        |
 
-| Module           | Purpose                                              |
-| ---------------- | ---------------------------------------------------- |
-| Main Analysis    | Generates and analyzes security events               |
-| Diagnose         | Examines event visibility and missing-event patterns |
-| Evaluate         | Evaluates detection performance                      |
-| Calibrate        | Examines attack-probability calibration              |
-| Inspect Cases    | Inspects selected analysis cases                     |
-| Analysis History | Stores and retrieves saved analysis results          |
+## 📊 Evaluation Results
 
-## Evaluation Results
+The following results were recorded during testing:
 
-The following results were obtained during project testing:
-
-| Scenario      | Evaluated Events | Reported Accuracy |
+| Scenario      | Events Evaluated | Reported Accuracy |
 | ------------- | ---------------: | ----------------: |
 | Standard      |              118 |            100.0% |
 | Mimic Admin   |              105 |            100.0% |
@@ -165,39 +150,38 @@ The following results were obtained during project testing:
 | Admin LDAP    |              145 |            100.0% |
 | **Overall**   |          **499** |         **94.0%** |
 
-Additional calibration results from testing:
+### Calibration Results
 
-* Brier score before calibration: 0.050
-* Brier score after calibration: 0.040
-* Expected Calibration Error (ECE) before calibration: 0.061
-* Expected Calibration Error (ECE) after calibration: 0.027
+| Metric                           | Before Calibration | After Calibration |
+| -------------------------------- | -----------------: | ----------------: |
+| Brier Score                      |              0.050 |             0.040 |
+| Expected Calibration Error (ECE) |              0.061 |             0.027 |
 
-These are results from the project's evaluation scenarios, not a guarantee of performance on real-world attacks. The results depend on the generated data, scenario design, and evaluation methodology.
+These results reflect the project's tested scenarios. They do not guarantee equivalent performance against real-world attacks.
 
-## Limitations
+## 🔮 Future Enhancements
+
+* Add CSV file upload for security event analysis.
+* Improve manual event input functionality.
+* Add visualizations for security events and evaluation results.
+* Improve report export functionality.
+* Test the system with additional datasets and attack scenarios.
+
+## ⚠️ Limitations
 
 * Attack probabilities are estimates, not proof of an attack.
 * Performance on generated scenarios does not establish real-world detection performance.
-* Missing or degraded security events can affect detection reliability.
-* Additional testing with representative real-world data is needed before operational use.
+* Missing or degraded events can affect detection reliability.
+* Further testing with representative real-world data is necessary.
 
-## Future Enhancements
-
-* Add CSV file upload for security event analysis.
-* Support manual event input through the dashboard.
-* Improve detection and reporting capabilities.
-* Add visualizations for event patterns and evaluation metrics.
-* Improve analysis history and report export functionality.
-* Evaluate the system using additional datasets and attack scenarios.
-
-## Author
+## 👩‍💻 Author
 
 **Vijaya Kumari Gavini**
 
 Cybersecurity Project
 
-GitHub: https://github.com/vijayakumarigavini1
+GitHub: [vijayakumarigavini1](https://github.com/vijayakumarigavini1)
 
-## Disclaimer
+## 📜 Disclaimer
 
-This project is intended for educational and cybersecurity research purposes. Detection results should be interpreted as analytical estimates and verified using additional evidence.
+This project is intended for educational and cybersecurity research purposes. Detection results should be treated as analytical estimates and verified using additional evidence.

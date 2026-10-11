@@ -35,7 +35,7 @@ def run_script(module):
             cwd=PROJECT_DIR,
             capture_output=True,
             text=True,
-            timeout=60
+            timeout=240
         )
 
         output = result.stdout or ""

@@ -185,3 +185,25 @@ GitHub: [vijayakumarigavini1](https://github.com/vijayakumarigavini1)
 ## 📜 Disclaimer
 
 This project is intended for educational and cybersecurity research purposes. Detection results should be treated as analytical estimates and verified using additional evidence.
+## 🌐 Live Demo
+
+Access the deployed application here:
+
+**[Fileless Invoice - Live Dashboard](https://fileless-invoice-security.onrender.com)**
+
+## 🚀 Project Modules
+
+- Main — Security event analysis
+- Diagnose — Detection diagnostics
+- Evaluate — Model performance evaluation
+- Calibrate — Probability calibration
+- Inspect Cases — Security case inspection
+
+## 🛠️ Technologies Used
+
+- Python
+- Flask
+- SQLite
+- HTML and CSS
+- Git and GitHub
+- Render
